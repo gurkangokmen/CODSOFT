@@ -7,8 +7,14 @@ public class Main {
 
         // Input: Take marks obtained (out of 100) in each subject.
         for (Subject subject : Subject.values()) {
-            System.out.println("Enter the score for " + subject + ": ");
-            int score = scanner.nextInt();
+            int score;
+            do {
+                System.out.println("Enter the score for " + subject + " (0-100): ");
+                score = scanner.nextInt();
+                if (score < 0 || score > 100) {
+                    System.out.println("Invalid score. Please enter a value between 0 and 100.");
+                }
+            } while (score < 0 || score > 100);
             student.addGrade(new Grade(subject, score));
         }
 
