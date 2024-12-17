@@ -48,16 +48,20 @@ public class NumberGame {
 
             System.out.println("Would you like to play again? (yes/no)");
             String playAgain = scanner.next();
-            if (playAgain.equals("yes")) {
-                play();
-            }
-            else {
-                System.out.println("Thank you for playing!");
-            }
+
+            if (playAgain.equals("yes")) { NumberGame numberGame = new NumberGame(); numberGame.play();}
+            else if(playAgain.equals("no")) {System.out.println("Thank you for playing!");}
+            else{ System.out.println("Thank you for playing!");}
         }
 
         else {
             System.out.println("Your score is: " + score);
+
+            System.out.println("Would you like to play again? (yes/no)");
+            String playAgain = scanner.next();
+            if (playAgain.equals("yes")) { NumberGame numberGame = new NumberGame(); numberGame.play();}
+            else if(playAgain.equals("no")) {System.out.println("Thank you for playing!");}
+            else{ System.out.println("Thank you for playing!");}
         }
 
     }
